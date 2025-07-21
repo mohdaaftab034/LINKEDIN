@@ -28,23 +28,15 @@ function Nav() {
       console.log(error);
     }
   }
-  const handleSearch = async () => {
-    if (!searchInput || searchInput.trim() === "") {
-      console.warn("Search input is empty");
-      return;
-    }
-
+  const handleSearch = async ()=> {
     try {
-      const result = await axios.get(
-        `${serverUrl}/api/user/search?query=${searchInput.trim()}`,
-        { withCredentials: true }
-      );
-      setSearchData(result.data);
+      let result = await axios.get(`${serverUrl}/api/user/search?query=${searchInput}`, {withCredentials:true})
+      setSearchData(result.data)
     } catch (error) {
       setSearchData([]);
-      console.log("Search error:", error.response?.data || error.message);
+      console.log(error)
     }
-  };
+  }
 
 
   useEffect(() => {
