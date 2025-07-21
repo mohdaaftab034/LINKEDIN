@@ -8,7 +8,7 @@ import { RxCrossCircled } from "react-icons/rx";
 
 import io from "socket.io-client"
 
-const socket = io("http://localhost:3000")
+const socket = io("https://linkedin-backend-ddfy.onrender.com")
 function Network() {
     let { serverUrl } = useContext(authDataContext)
     let [connections, setConnections] = useState([])
