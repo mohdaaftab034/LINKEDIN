@@ -6,7 +6,6 @@ import { FiCamera } from "react-icons/fi";
 import { userDataContext } from '../context/UserContext';
 import { HiPencil } from "react-icons/hi2";
 import { authDataContext } from '../context/AuthContext';
-import axios from 'axios';
 import EditProfile from '../components/EditProfile';
 import Post from '../components/Post';
 import ConnectionButton from '../components/ConnectionButton';

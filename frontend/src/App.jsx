@@ -9,7 +9,7 @@ import Profile from './pages/Profile'
 import Notification from './pages/Notification'
 
 function App() {
-  let {userData}=useContext(userDataContext)
+  let {userData}=useContext(userDataContext) 
   return (
    <Routes>
     <Route path='/' element={userData?<Home/>:<Navigate to="/login"/>}/>

@@ -14,16 +14,16 @@ dotenv.config()
 let app = express()
 let server = http.createServer(app)
 export const io = new Server(server, {
-    cors: ({
-        origin: "https://linkedin-frontend-lu4w.onrender.com",
-        credentials: true
-    })
+  cors: ({
+    origin: "http://localhost:5173",
+    credentials: true
+  })
 })
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin: "https://linkedin-frontend-lu4w.onrender.com",
-    credentials: true
+  origin: "http://localhost:5173",
+  credentials: true
 }))
 let port = process.env.PORT || 5000
 app.use("/api/auth", authRouter)
@@ -36,27 +36,25 @@ io.on("connection", (socket) => {
 
   socket.on("register", (userId) => {
     userSocketMap.set(userId, socket.id);
-    console.log("Registered:", userId, "->", socket.id);
-    console.log(userSocketMap);
+    console.log("User registered:", userId, socket.id);
   });
 
   socket.on("disconnect", () => {
     for (let [key, value] of userSocketMap.entries()) {
       if (value === socket.id) {
         userSocketMap.delete(key);
-        console.log("User disconnected:", socket.id);
-        break
+        console.log("User disconnected:", key, socket.id);
+        break;
       }
     }
   });
-
 });
 
 
 
 server.listen(port, () => {
-    connectDb()
-    console.log("server started");
+  connectDb()
+  console.log("server started");
 })
 
 
