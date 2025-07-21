@@ -38,7 +38,7 @@ function Signup() {
       setPassword("")
       setUserName("")
     } catch (error) {
-      setErr(error.response.data.message)
+      setErr(error)
       setLoading(false)
     }
   }
