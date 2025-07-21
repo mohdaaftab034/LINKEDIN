@@ -45,7 +45,7 @@ io.on("connection", (socket) => {
       if (value === socket.id) {
         userSocketMap.delete(key);
         console.log("User disconnected:", socket.id);
-        break;
+        break
       }
     }
   });
