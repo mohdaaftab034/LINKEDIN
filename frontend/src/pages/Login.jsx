@@ -49,7 +49,7 @@ function Login() {
         {err && <p className='text-center text-red-500'>
           *{err}
         </p>}
-        <button className='w-[100%] h-[50px] rounded-full bg-[#24b2ff] mt-[40px] text-white' disabled={loading}>{loading ? "Loading..." : "Sign In"}</button>
+        <button className='w-[100%] h-[50px] rounded-full bg-[#004182] mt-[40px] text-white' disabled={loading}>{loading ? "Loading..." : "Sign In"}</button>
         <p className='text-center cursor-pointer' onClick={() => navigate("/signup")}>want to create a new account ? <span className='text-[#2a9bd8]' >Sign Up</span></p>
       </form>
     </div>
