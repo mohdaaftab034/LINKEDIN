@@ -5,7 +5,10 @@ import { authDataContext } from './AuthContext'
 export const userDataContext = createContext()
 import { io } from "socket.io-client"
 
-export let socket = io("http://localhost:3000")
+const socket = io("https://linkedin-h2wr.onrender.com", {
+  withCredentials: true
+});
+
 
 function UserContext({ children }) {
   let [userData, setUserData] = useState(null)
