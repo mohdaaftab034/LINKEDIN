@@ -5,7 +5,7 @@ import { authDataContext } from './AuthContext'
 export const userDataContext = createContext()
 import { io } from "socket.io-client"
 
-const socket=io("http://localhost:8000")
+export const socket = io("http://localhost:8000")
 
 function UserContext({ children }) {
   let [userData, setUserData] = useState(null)
