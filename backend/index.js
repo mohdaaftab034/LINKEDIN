@@ -10,19 +10,23 @@ import connectionRouter from "./routes/connection.routes.js"
 import http from "http"
 import { Server } from "socket.io"
 import notificationRouter from "./routes/notification.routes.js"
+import path from "path"
+
 dotenv.config()
 let app = express()
+const _dirname = path.resolve();
+
 let server = http.createServer(app)
 export const io = new Server(server, {
   cors: ({
-    origin: "https://linkedin-frontend-oyrn.onrender.com",
+    origin: "http://localhost:5173",
     credentials: true
   })
 })
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-  origin: "https://linkedin-frontend-oyrn.onrender.com",
+  origin: "http://localhost:5173",
   credentials: true
 }))
 let port = process.env.PORT || 5000
@@ -50,7 +54,10 @@ io.on("connection", (socket) => {
   });
 });
 
-
+app.use(express.static(path.join(_dirname, "/frontend/dist")))
+app.get('*', (req, res)=> {
+  res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
+})
 
 server.listen(port, () => {
   connectDb()
