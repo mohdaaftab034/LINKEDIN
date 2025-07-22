@@ -12,10 +12,6 @@ import { Server } from "socket.io"
 import notificationRouter from "./routes/notification.routes.js"
 import path from "path"
 
-const allowedOrigin = process.env.NODE_ENV === 'production'
-  ? "https://linkedin-h2wr.onrender.com"
-  : "http://localhost:5173";
-
 dotenv.config()
 let app = express()
 const _dirname = path.resolve();
@@ -23,14 +19,14 @@ const _dirname = path.resolve();
 let server = http.createServer(app)
 export const io = new Server(server, {
   cors: ({
-    allowedOrigin: "https://linkedin-h2wr.onrender.com",
+    origin: "https://linkedin-h2wr.onrender.com",
     credentials: true
   })
 })
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-  allowedOrigin: "https://linkedin-h2wr.onrender.com",
+  origin: "https://linkedin-h2wr.onrender.com",
   credentials: true
 }))
 let port = process.env.PORT || 5000
