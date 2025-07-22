@@ -5,9 +5,7 @@ import io from "socket.io-client"
 import { userDataContext } from '../context/UserContext'
 import { useNavigate } from 'react-router-dom'
 
-const socket = io("http://localhost:3000", {
-  withCredentials: true
-});
+const socket=io("http://localhost:8000")
 
 
 function ConnectionButton({ userId }) {

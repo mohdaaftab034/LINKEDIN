@@ -8,9 +8,7 @@ import { RxCrossCircled } from "react-icons/rx";
 
 import io from "socket.io-client"
 
-const socket = io("http://localhost:3000", {
-  withCredentials: true
-});
+const socket=io("http://localhost:8000")
 
 function Network() {
     let { serverUrl } = useContext(authDataContext)

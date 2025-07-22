@@ -55,7 +55,7 @@ io.on("connection", (socket) => {
 });
 
 app.use(express.static(path.join(_dirname, "/frontend/dist")))
-app.get('*', (req, res)=> {
+app.get('*', (_, res)=> {
   res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
 })
 
