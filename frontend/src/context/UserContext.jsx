@@ -5,7 +5,7 @@ import { authDataContext } from './AuthContext'
 export const userDataContext = createContext()
 import { io } from "socket.io-client"
 
-const socket = io("https://linkedin-h2wr.onrender.com", {
+const socket = io("http://localhost:3000", {
   withCredentials: true
 });
 
