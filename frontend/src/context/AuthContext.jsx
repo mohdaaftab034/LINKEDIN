@@ -4,7 +4,7 @@ export const authDataContext = createContext();
 
 function AuthContext({ children }) {
   // 🔁 Dynamically set server URL based on environment
-  const serverUrl = "http://localhost:3000"
+  const serverUrl = "https://linkedin-h2wr.onrender.com"
   let value = { serverUrl };
 
   return (
