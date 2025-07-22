@@ -85,7 +85,7 @@ function Nav() {
             <img src={userData.profileImage || dp} alt="" className='w-full h-full' />
           </div>
           <div className='text-[19px] font-semibold text-gray-700'>{`${userData.firstName} ${userData.lastName}`}</div>
-          <button className='w-[100%] h-[40px] rounded-full border-2 border-[#2dc0ff] text-[#2dc0ff]' onClick={() => handleGetProfile(userData.userName)}>View Profile</button>
+          <button className='w-[100%] h-[40px] rounded-full border-2 border-[#004182] text-[#004182]' onClick={() => handleGetProfile(userData.userName)}>View Profile</button>
           <div className='w-full h-[1px] bg-gray-700 '></div>
           <div className='flex  w-full items-center justify-start text-gray-600 gap-[10px] cursor-pointer' onClick={() => navigate("/network")}>
             <FaUserGroup className='w-[23px] h-[23px] text-gray-600 ' />

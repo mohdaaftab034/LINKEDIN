@@ -55,12 +55,12 @@ function Signup() {
         <input type="email" placeholder='email' required className='w-[100%] h-[50px] border-2 border-gray-600 text-gray-800 text-[18px] px-[20px] py-[10px] rounded-md' value={email} onChange={(e) => setEmail(e.target.value)} />
         <div className='w-[100%] h-[50px] border-2 border-gray-600 text-gray-800 text-[18px]  rounded-md relative'>
           <input type={show ? "text" : "password"} placeholder='password' required className='w-full h-fullborder-none text-gray-800 text-[18px] px-[20px] py-[10px] rounded-md' value={password} onChange={(e) => setPassword(e.target.value)} />
-          <span className='absolute right-[20px] top-[10px] text-[#24b2ff] cursor-pointer font-semibold' onClick={() => setShow(prev => !prev)}>{show ? "hidden" : "show"}</span>
+          <span className='absolute right-[20px] top-[10px] text-[#004182] cursor-pointer font-semibold' onClick={() => setShow(prev => !prev)}>{show ? "hidden" : "show"}</span>
         </div>
         {err && <p className='text-center text-red-500'>
           *{err}
         </p>}
-        <button className='w-[100%] h-[50px] rounded-full bg-[#24b2ff] mt-[40px] text-white' disabled={loading}>{loading ? "Loading..." : "Sign Up"}</button>
+        <button className='w-[100%] h-[50px] rounded-full bg-[#004182] mt-[40px] text-white' disabled={loading}>{loading ? "Loading..." : "Sign Up"}</button>
         <p className='text-center cursor-pointer' onClick={() => navigate("/login")}>Already have an account ? <span className='text-[#2a9bd8]' >Sign In</span></p>
       </form>
     </div>

@@ -120,7 +120,7 @@ function Home() {
 
 
           <div className='flex justify-end items-center' >
-            <button className='w-[100px] h-[50px] rounded-full bg-[#24b2ff] mt-[40px] text-white' disabled={posting} onClick={handleUploadPost}>
+            <button className='w-[100px] h-[50px] rounded-full bg-[#004182] mt-[40px] text-white' disabled={posting} onClick={handleUploadPost}>
               {posting ? "Posting..." : "Post"}
             </button>
           </div>

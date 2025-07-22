@@ -110,7 +110,7 @@ function Post({ id, author, like, comment, description, image, createdAt }) {
       <div>
         <div className='w-full flex justify-between items-center p-[20px] border-b-2 border-gray-500'>
           <div className='flex items-center justify-center gap-[5px] text-[18px]'>
-            <BiLike className='text-[#1ebbff] w-[20px] h-[20px]' /><span >{likes.length}</span></div>
+            <BiLike className='text-[#004182] w-[20px] h-[20px]' /><span >{likes.length}</span></div>
           <div className='flex items-center justify-center gap-[5px] text-[18px] cursor-pointer' onClick={() => setShowComment(prev => !prev)}><span>{comment.length}</span><span>comments</span></div>
         </div>
         <div className='flex justify-start items-center w-full p-[20px] gap-[20px]'>

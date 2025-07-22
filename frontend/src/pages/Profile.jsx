@@ -47,7 +47,7 @@ function Profile() {
                             <span>{edu.college}</span>
                         ))}
                     </div>}
-                    {profileData._id == userData._id && <button className='min-w-[150px] h-[40px] my-2 rounded-full border-2 ml-[20px] border-[#2dc0ff] text-[#2dc0ff] flex items-center justify-center gap-[10px]' onClick={() => setEdit(true)}>Edit Profile <HiPencil /></button>}
+                    {profileData._id == userData._id && <button className='min-w-[150px] h-[40px] my-2 rounded-full border-2 ml-[20px] border-[#004182] text-[#004182] flex items-center justify-center gap-[10px]' onClick={() => setEdit(true)}>Edit Profile <HiPencil /></button>}
                     {profileData._id != userData._id && <div className="ml-[20px] mt-[20px]"><ConnectionButton userId={profileData._id} /></div>}
 
                 </div>
@@ -62,7 +62,7 @@ function Profile() {
                         {profileData.skills.map((skill) => (
                             <div className='text-[20px] font-normal'>{skill}</div>
                         ))}
-                        {profileData._id == userData._id && <button className='min-w-[150px] h-[40px] rounded-full border-2 ml-[20px] border-[#2dc0ff] text-[#2dc0ff] flex items-center justify-center gap-[10px]' onClick={() => setEdit(true)}>Add Skills</button>}
+                        {profileData._id == userData._id && <button className='min-w-[150px] h-[40px] rounded-full border-2 ml-[20px] border-[#004182] text-[#004182] flex items-center justify-center gap-[10px]' onClick={() => setEdit(true)}>Add Skills</button>}
 
                     </div>
                 </div>}
@@ -77,7 +77,7 @@ function Profile() {
                             </>
                         ))}
 
-                        {profileData._id == userData._id && <button className='min-w-[150px] h-[40px] rounded-full border-2  border-[#2dc0ff] text-[#2dc0ff] flex items-center justify-center gap-[10px]' onClick={() => setEdit(true)}>Add Education</button>}
+                        {profileData._id == userData._id && <button className='min-w-[150px] h-[40px] rounded-full border-2  border-[#004182] text-[#004182] flex items-center justify-center gap-[10px]' onClick={() => setEdit(true)}>Add Education</button>}
 
                     </div>
                 </div>}
@@ -91,7 +91,7 @@ function Profile() {
                                 <div className='text-[20px]'><span className='font-semibold text-gray-800'>Description</span> : {ex.description}</div>
                             </>
                         ))}
-                        {profileData._id == userData._id && <button className='min-w-[150px] h-[40px] rounded-full border-2  border-[#2dc0ff] text-[#2dc0ff] flex items-center justify-center gap-[10px]' onClick={() => setEdit(true)}>Add Experience</button>}
+                        {profileData._id == userData._id && <button className='min-w-[150px] h-[40px] rounded-full border-2  border-[#004182] text-[#004182] flex items-center justify-center gap-[10px]' onClick={() => setEdit(true)}>Add Experience</button>}
 
                     </div>
                 </div>}

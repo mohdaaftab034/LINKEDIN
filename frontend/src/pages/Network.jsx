@@ -61,7 +61,7 @@ function Network() {
                             <div className='text-[19px] font-semibold text-gray-700'>{`${connection.sender.firstName} ${connection.sender.lastName}`}</div>
                         </div>
                         <div className='flex justify-center items-center gap-[10px]'>
-                            <button className='text-[#18c5ff] font-semibold' onClick={() => handleAcceptConnection(connection._id)}>
+                            <button className='text-[#004182] font-semibold' onClick={() => handleAcceptConnection(connection._id)}>
                                 <IoIosCheckmarkCircleOutline className='w-[40px] h-[40px]' />
                             </button>
                             <button className='text-[#ff4218] font-semibold' onClick={() => handleRejectConnection(connection._id)}>

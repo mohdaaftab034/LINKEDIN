@@ -158,7 +158,7 @@ function EditProfile() {
         <div className='w-[80px] h-[80px] rounded-full overflow-hidden absolute top-[150px] ml-[20px]' onClick={() => profileImage.current.click()}>
           <img src={frontendProfileImage} alt="" className='w-full h-full' />
         </div>
-        <div className='w-[20px] h-[20px] bg-[#17c1ff] absolute top-[200px] left-[90px] rounded-full flex justify-center items-center cursor-pointer'>
+        <div className='w-[20px] h-[20px] bg-[#004182] absolute top-[200px] left-[90px] rounded-full flex justify-center items-center cursor-pointer'>
           <FiPlus className='text-white' />
         </div>
         <div className='w-full flex flex-col items-center justify-center gap-[20px] mt-[50px]' >
