@@ -5,25 +5,28 @@ import Notification from "../models/notification.model.js";
 
 export const createPost = async (req, res) => {
     try {
-        const { description } = req.body;
-        let image;
-
-        if (req.file && req.file.buffer) {
-            image = await uploadOnCloudinary(req.file.buffer);
+        let { description } = req.body
+        let newPost;
+        if (req.file) {
+            let image = await uploadOnCloudinary(req.file.path)
+            newPost = await Post.create({
+                author: req.userId,
+                description,
+                image
+            })
+            console.log(image)
+        } else {
+            newPost = await Post.create({
+                author: req.userId,
+                description
+            })
         }
+        return res.status(201).json(newPost)
 
-        const newPost = await Post.create({
-            author: req.userId,
-            description,
-            image,
-        });
-
-        return res.status(201).json(newPost);
     } catch (error) {
-        console.error("Create Post Error:", error);
         return res.status(500).json({ message: "create post error", error: error.message });
     }
-};
+}
 
 
 export const getPost = async (req, res) => {
