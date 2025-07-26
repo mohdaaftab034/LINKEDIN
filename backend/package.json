@@ -7,9 +7,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "node backend/index.js",
-    "build" : "npm install && npm install --prefix frontend && npm run build --prefix frontend",
-    "start": "node backend/index.js"
+    "dev": "nodemon index.js",
+    "start": "nodemon index.js"
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",

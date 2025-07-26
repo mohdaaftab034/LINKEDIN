@@ -61,29 +61,29 @@ export const getprofile = async (req, res) => {
 }
 
 export const search = async (req, res) => {
-  try {
-    let { query } = req.query;
+    try {
+        let { query } = req.query;
 
-    if (!query || query.trim() === "") {
-      return res.status(400).json({ message: "query is required" });
+        if (!query || query.trim() === "") {
+            return res.status(400).json({ message: "query is required" });
+        }
+
+        query = query.trim();
+
+        const users = await User.find({
+            $or: [
+                { firstName: { $regex: query, $options: "i" } },
+                { lastName: { $regex: query, $options: "i" } },
+                { userName: { $regex: query, $options: "i" } },
+                { skills: { $in: [query] } },
+            ],
+        });
+
+        return res.status(200).json(users);
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ message: `search error ${error}` });
     }
-
-    query = query.trim();
-
-    const users = await User.find({
-      $or: [
-        { firstName: { $regex: query, $options: "i" } },
-        { lastName: { $regex: query, $options: "i" } },
-        { userName: { $regex: query, $options: "i" } },
-        { skills: { $in: [query] } },
-      ],
-    });
-
-    return res.status(200).json(users);
-  } catch (error) {
-    console.log(error);
-    return res.status(500).json({ message: `search error ${error}` });
-  }
 };
 
 export const getSuggestedUser = async (req, res) => {

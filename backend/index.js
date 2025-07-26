@@ -10,23 +10,21 @@ import connectionRouter from "./routes/connection.routes.js"
 import http from "http"
 import { Server } from "socket.io"
 import notificationRouter from "./routes/notification.routes.js"
-import path from "path"
 
 dotenv.config()
 let app = express()
-const _dirname = path.resolve();
 
 let server = http.createServer(app)
 export const io = new Server(server, {
   cors: ({
-    origin: "http://localhost:5173",
+    origin: process.env.FRONTEND_API_KEY,
     credentials: true
   })
 })
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: process.env.FRONTEND_API_KEY,
   credentials: true
 }))
 let port = process.env.PORT || 5000
@@ -54,10 +52,6 @@ io.on("connection", (socket) => {
   });
 });
 
-app.use(express.static(path.join(_dirname, "/frontend/dist")))
-app.get('*', (_, res)=> {
-  res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
-})
 
 server.listen(port, () => {
   connectDb()

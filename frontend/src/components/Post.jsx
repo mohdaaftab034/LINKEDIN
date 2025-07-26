@@ -119,8 +119,8 @@ function Post({ id, author, like, comment, description, image, createdAt }) {
             <span>Like</span>
           </div>}
           {likes.includes(userData._id) && <div className='flex justify-center items-center gap-[5px] cursor-pointer' onClick={handleLike}>
-            <BiSolidLike className=' w-[24px] h-[24px] text-[#07a4ff]' />
-            <span className="text-[#07a4ff] font-semibold">Liked</span>
+            <BiSolidLike className=' w-[24px] h-[24px] text-[#004182]' />
+            <span className="text-[#004182] font-semibold">Liked</span>
           </div>}
 
           <div className='flex justify-center items-center gap-[5px] cursor-pointer' onClick={() => setShowComment(prev => !prev)}>
@@ -133,7 +133,7 @@ function Post({ id, author, like, comment, description, image, createdAt }) {
           <form className="w-full flex justify-between items-center border-b-2 border-b-gray-300 p-[10px] 
     " onSubmit={handleComment}>
             <input type="text" placeholder={"leave a comment"} className='outline-none  border-none' value={commentContent} onChange={(e) => setCommentContent(e.target.value)} />
-            <button><LuSendHorizontal className="text-[#07a4ff] w-[22px] h-[22px]" /></button>
+            <button><LuSendHorizontal className="text-[#004182] w-[22px] h-[22px]" /></button>
           </form>
 
           <div className='flex flex-col gap-[10px]'>
