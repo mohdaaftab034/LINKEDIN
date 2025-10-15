@@ -27,7 +27,7 @@ app.use(cors({
   origin: 'http://localhost:5173',
   credentials: true
 }))
-let port = process.env.PORT || 5000
+let port = process.env.PORT;
 app.use("/api/auth", authRouter)
 app.use("/api/user", userRouter)
 app.use("/api/post", postRouter)
@@ -55,7 +55,7 @@ io.on("connection", (socket) => {
 
 server.listen(port, () => {
   connectDb()
-  console.log("server started");
+  console.log(`server started at Port ${port}`);
 })
 
 

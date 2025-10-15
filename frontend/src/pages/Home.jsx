@@ -74,17 +74,17 @@ function Home() {
       <Nav />
 
       <div className='w-full cursor-pointer lg:w-[15%] min-h-[200px] bg-[white] border-[1px] border-gray-300 rounded-lg relative '>
-        <div className='w-[100%] h-[100px] bg-gray-400 rounded-t-lg overflow-hidden flex items-center justify-center relative cursor-pointer' onClick={()=> handleGetProfile(userData.userName)} >
+        <div className='w-[100%] h-[100px] bg-gray-400 rounded-t-lg overflow-hidden flex items-center justify-center relative cursor-pointer' onClick={() => handleGetProfile(userData.userName)} >
           <img src={userData.coverImage || ""} alt="" className='w-full h-full' />
           <FiCamera className='absolute right-[20px] top-[20px] w-[25px] h-[25px] text-white cursor-pointer' />
         </div>
-        <div onClick={()=> handleGetProfile(userData.userName)} className='w-[70px] border-2 border-white h-[70px] rounded-full overflow-hidden flex items-center justify-center absolute top-[55px] left-[20px] cursor-pointer'>
+        <div onClick={() => handleGetProfile(userData.userName)} className='w-[70px] border-2 border-white h-[70px] rounded-full overflow-hidden flex items-center justify-center absolute top-[55px] left-[20px] cursor-pointer'>
           <img src={userData.profileImage || dp} alt="" className='h-full w-full' />
 
         </div>
 
         <div className='mt-[30px] pl-[20px]  font-semibold text-gray-700'>
-          <div onClick={()=> handleGetProfile(userData.userName)} className='text-xl font-bold'>{`${userData.firstName} ${userData.lastName}`}</div>
+          <div onClick={() => handleGetProfile(userData.userName)} className='text-xl font-bold'>{`${userData.firstName} ${userData.lastName}`}</div>
           <div className='text-sm font-normal text-gray-600'>{userData.headline || ""}</div>
           <div className='text-[16px] text-gray-500'>{userData.location}</div>
         </div>
@@ -133,7 +133,7 @@ function Home() {
 
       <div className=' w-full lg:w-[43%] min-h-[200px] bg-bg-[#f0efe7] flex flex-col gap-[20px]'>
         <div className='w-full h-[120px] bg-white border-[1px] border-gray-300 rounded-lg flex items-center p-[20px]  justify-center gap-[10px]'>
-          <div className='w-[50px] h-[50px] rounded-full overflow-hidden flex items-center justify-center  cursor-pointer' onClick={()=> handleGetProfile(userData.userName)}>
+          <div className='w-[50px] h-[50px] rounded-full overflow-hidden flex items-center justify-center  cursor-pointer' onClick={() => handleGetProfile(userData.userName)}>
             <img src={userData.profileImage || dp} alt="" className='h-full' />
           </div>
           <button className='w-[80%] h-[50px] border-[1px] rounded-full border-gray-400 flex items-center justify-start px-[20px] hover:bg-gray-100' onClick={() => setUploadPost(true)}>start a post</button>

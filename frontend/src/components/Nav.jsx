@@ -28,15 +28,26 @@ function Nav() {
       console.log(error);
     }
   }
-  const handleSearch = async ()=> {
+  const handleSearch = async () => {
+    const trimmedQuery = searchInput.trim();
+
+    // Prevent request if input is empty
+    if (!trimmedQuery) {
+      setSearchData([]); // clear previous results
+      return;
+    }
+
     try {
-      let result = await axios.get(`${serverUrl}/api/user/search?query=${searchInput}`, {withCredentials:true})
-      setSearchData(result.data)
+      const result = await axios.get(
+        `${serverUrl}/api/user/search?query=${encodeURIComponent(trimmedQuery)}`,
+        { withCredentials: true }
+      );
+      setSearchData(result.data);
     } catch (error) {
       setSearchData([]);
-      console.log(error)
+      console.log("Search error:", error);
     }
-  }
+  };
 
 
   useEffect(() => {
@@ -58,7 +69,7 @@ function Nav() {
         {!activeSearch && <div><IoSearchSharp className='w-[23px] h-[23px] text-gray-600 lg:hidden' onClick={() => setActiveSearch(true)} /></div>}
         {searchData.length > 0 && <div className='absolute top-[80px] h-[500px] left-[0px]  lg:left-[20px] border-[1px] rounded-lg border-gray-300 w-[100%] lg:w-[700px] bg-white flex flex-col gap-[20px] p-[20px] overflow-auto'>
           {searchData.map((sea) => (
-            <div className='flex gap-[20px] items-center border-b-2 border-b-gray-300 p-[10px] hover:bg-gray-200 cursor-pointer rounded-lg ' onClick={() => handleGetProfile(sea.userName)}>
+            <div className='flex gap-[20px] items-center border-b-2 border-b-gray-300 p-[10px] hover:bg-gray-200 cursor-pointer rounded-lg ' onClick={() => {handleGetProfile(sea.userName); setActiveSearch(false)}}>
               <div className='w-[70px] h-[70px] rounded-full overflow-hidden'>
                 <img src={sea.profileImage || dp} alt="" className='w-full h-full' />
               </div>

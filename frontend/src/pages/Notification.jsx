@@ -64,7 +64,7 @@ function Notification() {
                         <div>
                             <div className='flex justify-between relative'>
                                 <div className='flex justify-start ml-[80px] mb-[20px] items-center gap-[10px]'>
-                                    <div className='w-[60px] h-[60px] rounded-full overflow-hidden cursor-pointer' onClick={()=> handleGetProfile(noti.relatedUser.userName)}>
+                                    <div className='w-[40px] h-[40px] rounded-full overflow-hidden cursor-pointer' onClick={()=> handleGetProfile(noti.relatedUser.userName)}>
                                         <img src={noti.relatedUser.profileImage || dp} alt="" className='w-full h-full' />
                                     </div>
                                     <div className='text-[19px] font-semibold text-gray-700'>{`${noti.relatedUser.firstName} ${noti.relatedUser.lastName} ${handleMessage(noti.type)}`}</div>
